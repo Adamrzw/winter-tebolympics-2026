@@ -71,6 +71,7 @@ Open http://localhost:3001 (backend serves frontend)
 - **Responsive Design**: Works on desktop and mobile devices
 - **Tiebreaker Logic**: Comprehensive ranking system with multiple tiebreaker rules
 - **Connection Status**: Visual indicators for server connection state
+- **Smart API Detection**: Automatically uses same-origin in production, localhost in development
 
 ## Scoring Rules
 

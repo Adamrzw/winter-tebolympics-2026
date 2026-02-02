@@ -15,7 +15,8 @@
       "Bash(npm run build:full:*)",
       "Bash(NODE_ENV=production npm start)",
       "Bash(npm run build:*)",
-      "Bash(npm run build:backend:*)"
+      "Bash(npm run build:backend:*)",
+      "Bash(ls:*)"
     ]
   }
 }
