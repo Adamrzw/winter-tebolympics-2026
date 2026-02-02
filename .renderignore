@@ -1,0 +1,23 @@
+# Render deployment ignore file
+# These files/folders won't be uploaded during deployment
+
+# Development files
+*.md
+.env.local
+.vscode/
+.idea/
+
+# Git
+.git/
+.gitignore
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+.cache/

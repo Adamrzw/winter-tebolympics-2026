@@ -1,0 +1,99 @@
+.team-card {
+  background-color: var(--color-card);
+  border: 2px solid var(--color-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.team-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
+}
+
+.team-card.rank-1 {
+  border-color: var(--color-gold);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+.team-card.rank-2 {
+  border-color: var(--color-silver);
+  box-shadow: 0 4px 12px rgba(192, 192, 192, 0.3);
+}
+
+.team-card.rank-3 {
+  border-color: var(--color-bronze);
+  box-shadow: 0 4px 12px rgba(205, 127, 50, 0.3);
+}
+
+.team-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--color-border);
+  margin-bottom: 1rem;
+}
+
+.team-rank {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 60px;
+}
+
+.rank-number {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-gold);
+}
+
+.rank-emoji {
+  font-size: 1.8rem;
+}
+
+.team-info {
+  flex: 1;
+}
+
+.team-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: var(--color-text);
+}
+
+.team-points {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--color-gold);
+}
+
+.team-countries {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (max-width: 768px) {
+  .team-card {
+    padding: 1rem;
+  }
+
+  .team-name {
+    font-size: 1.4rem;
+  }
+
+  .team-points {
+    font-size: 1.1rem;
+  }
+
+  .rank-number {
+    font-size: 1.2rem;
+  }
+
+  .rank-emoji {
+    font-size: 1.5rem;
+  }
+}

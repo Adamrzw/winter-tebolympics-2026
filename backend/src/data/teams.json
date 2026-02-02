@@ -1,0 +1,98 @@
+[
+  {
+    "id": "team-01",
+    "managerName": "Nick A.",
+    "goldCountry": { "code": "KOR", "name": "South Korea" },
+    "silverCountry": { "code": "LVA", "name": "Latvia" },
+    "bronzeCountry": { "code": "GBR", "name": "Great Britain" },
+    "tiebreakerRank": 1
+  },
+  {
+    "id": "team-02",
+    "managerName": "Scott",
+    "goldCountry": { "code": "GBR", "name": "Great Britain" },
+    "silverCountry": { "code": "ESP", "name": "Spain" },
+    "bronzeCountry": { "code": "KOR", "name": "South Korea" },
+    "tiebreakerRank": 2
+  },
+  {
+    "id": "team-03",
+    "managerName": "Steve",
+    "goldCountry": { "code": "FIN", "name": "Finland" },
+    "silverCountry": { "code": "HUN", "name": "Hungary" },
+    "bronzeCountry": { "code": "LVA", "name": "Latvia" },
+    "tiebreakerRank": 3
+  },
+  {
+    "id": "team-04",
+    "managerName": "Kerry",
+    "goldCountry": { "code": "SVN", "name": "Slovenia" },
+    "silverCountry": { "code": "POL", "name": "Poland" },
+    "bronzeCountry": { "code": "FIN", "name": "Finland" },
+    "tiebreakerRank": 4
+  },
+  {
+    "id": "team-05",
+    "managerName": "Adam",
+    "goldCountry": { "code": "NZL", "name": "New Zealand" },
+    "silverCountry": { "code": "BEL", "name": "Belgium" },
+    "bronzeCountry": { "code": "SVN", "name": "Slovenia" },
+    "tiebreakerRank": 5
+  },
+  {
+    "id": "team-06",
+    "managerName": "Nick W.",
+    "goldCountry": { "code": "AUS", "name": "Australia" },
+    "silverCountry": { "code": "CZE", "name": "Czech Republic" },
+    "bronzeCountry": { "code": "NZL", "name": "New Zealand" },
+    "tiebreakerRank": 6
+  },
+  {
+    "id": "team-07",
+    "managerName": "Zach",
+    "goldCountry": { "code": "HUN", "name": "Hungary" },
+    "silverCountry": { "code": "GBR", "name": "Great Britain" },
+    "bronzeCountry": { "code": "AUS", "name": "Australia" },
+    "tiebreakerRank": 7
+  },
+  {
+    "id": "team-08",
+    "managerName": "Gabe",
+    "goldCountry": { "code": "BEL", "name": "Belgium" },
+    "silverCountry": { "code": "SVN", "name": "Slovenia" },
+    "bronzeCountry": { "code": "HUN", "name": "Hungary" },
+    "tiebreakerRank": 8
+  },
+  {
+    "id": "team-09",
+    "managerName": "Lexi",
+    "goldCountry": { "code": "CZE", "name": "Czech Republic" },
+    "silverCountry": { "code": "AUS", "name": "Australia" },
+    "bronzeCountry": { "code": "BEL", "name": "Belgium" },
+    "tiebreakerRank": 9
+  },
+  {
+    "id": "team-10",
+    "managerName": "Phil",
+    "goldCountry": { "code": "SVK", "name": "Slovakia" },
+    "silverCountry": { "code": "NZL", "name": "New Zealand" },
+    "bronzeCountry": { "code": "POL", "name": "Poland" },
+    "tiebreakerRank": 10
+  },
+  {
+    "id": "team-11",
+    "managerName": "Chris",
+    "goldCountry": { "code": "POL", "name": "Poland" },
+    "silverCountry": { "code": "FIN", "name": "Finland" },
+    "bronzeCountry": { "code": "CZE", "name": "Czech Republic" },
+    "tiebreakerRank": 11
+  },
+  {
+    "id": "team-12",
+    "managerName": "Eric",
+    "goldCountry": { "code": "ESP", "name": "Spain" },
+    "silverCountry": { "code": "KOR", "name": "South Korea" },
+    "bronzeCountry": { "code": "SVK", "name": "Slovakia" },
+    "tiebreakerRank": 12
+  }
+]

@@ -1,0 +1,85 @@
+.country-medals {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.country-medals:hover {
+  transform: translateX(4px);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.country-medals.gold {
+  border-left-color: var(--color-gold);
+}
+
+.country-medals.silver {
+  border-left-color: var(--color-silver);
+}
+
+.country-medals.bronze {
+  border-left-color: var(--color-bronze);
+}
+
+.country-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.country-flag {
+  font-size: 2rem;
+}
+
+.country-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.country-name {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.medal-type {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.medal-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.medal-count {
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+}
+
+.medal-points {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-gold);
+}
+
+@media (max-width: 768px) {
+  .country-flag {
+    font-size: 1.5rem;
+  }
+
+  .country-name {
+    font-size: 0.9rem;
+  }
+
+  .medal-type {
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,20 @@
+services:
+  # Combined Web Service (Backend serves Frontend)
+  - type: web
+    name: winter-tebolympics
+    runtime: node
+    region: oregon
+    plan: free
+    rootDir: backend
+    buildCommand: npm install && npm run build:full
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: USE_MOCK_DATA
+        value: true
+      - key: CORS_ORIGIN
+        value: "*"
