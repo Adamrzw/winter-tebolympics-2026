@@ -2,6 +2,12 @@ import fs from 'fs/promises';
 import path from 'path';
 import { MedalTableEntry } from '../types';
 
+import { fileURLToPath } from 'node:url';
+import { dirname } from 'node:path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const MEDAL_DATA_PATH = path.join(__dirname, '../data/medal-data.json');
 
 export async function loadMedalData(): Promise<MedalTableEntry[] | null> {
