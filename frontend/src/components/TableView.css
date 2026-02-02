@@ -1,0 +1,233 @@
+.table-view-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.table-scroll {
+  overflow-x: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.scoreboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-card);
+  min-width: 900px;
+}
+
+.scoreboard-table thead {
+  background: linear-gradient(135deg, #1a1f3a 0%, #2a3f5a 100%);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.scoreboard-table th {
+  padding: 1rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-text);
+  border-bottom: 2px solid var(--color-gold);
+  white-space: nowrap;
+}
+
+.scoreboard-table th.sortable {
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s;
+}
+
+.scoreboard-table th.sortable:hover {
+  background-color: rgba(255, 215, 0, 0.1);
+}
+
+.sort-icon {
+  margin-left: 0.5rem;
+  opacity: 0.5;
+  font-size: 0.8rem;
+}
+
+.sort-icon.active {
+  opacity: 1;
+  color: var(--color-gold);
+}
+
+.scoreboard-table tbody tr {
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color 0.2s;
+}
+
+.scoreboard-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.scoreboard-table tbody tr.rank-1 {
+  background-color: rgba(255, 215, 0, 0.1);
+  border-left: 4px solid var(--color-gold);
+}
+
+.scoreboard-table tbody tr.rank-2 {
+  background-color: rgba(192, 192, 192, 0.1);
+  border-left: 4px solid var(--color-silver);
+}
+
+.scoreboard-table tbody tr.rank-3 {
+  background-color: rgba(205, 127, 50, 0.1);
+  border-left: 4px solid var(--color-bronze);
+}
+
+.scoreboard-table td {
+  padding: 1rem;
+  color: var(--color-text);
+}
+
+.rank-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+}
+
+.rank-number {
+  color: var(--color-gold);
+  font-size: 1.1rem;
+}
+
+.rank-emoji {
+  font-size: 1.3rem;
+}
+
+.manager-cell {
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--color-text);
+}
+
+.points-cell {
+  font-size: 1.1rem;
+  color: var(--color-gold);
+}
+
+.points-cell strong {
+  font-size: 1.3rem;
+}
+
+.country-cell {
+  color: var(--color-text-secondary);
+}
+
+.medal-cell {
+  text-align: center;
+}
+
+.medal-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.medal-count {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.medal-points {
+  font-size: 0.85rem;
+  color: var(--color-text-secondary);
+}
+
+.gold-medal .medal-count {
+  color: var(--color-gold);
+}
+
+.silver-medal .medal-count {
+  color: var(--color-silver);
+}
+
+.bronze-medal .medal-count {
+  color: var(--color-bronze);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .table-view-container {
+    padding: 1rem;
+  }
+
+  .scoreboard-table {
+    font-size: 0.85rem;
+    min-width: 800px;
+  }
+
+  .scoreboard-table th,
+  .scoreboard-table td {
+    padding: 0.75rem 0.5rem;
+  }
+
+  .scoreboard-table th {
+    font-size: 0.75rem;
+  }
+
+  .rank-number {
+    font-size: 1rem;
+  }
+
+  .rank-emoji {
+    font-size: 1.1rem;
+  }
+
+  .manager-cell {
+    font-size: 0.95rem;
+  }
+
+  .points-cell {
+    font-size: 1rem;
+  }
+
+  .points-cell strong {
+    font-size: 1.1rem;
+  }
+
+  .medal-count {
+    font-size: 1rem;
+  }
+
+  .medal-points {
+    font-size: 0.75rem;
+  }
+
+  /* Show scroll hint on mobile */
+  .table-scroll::after {
+    content: '← Scroll →';
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 215, 0, 0.9);
+    color: var(--color-background);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    pointer-events: none;
+    opacity: 0;
+    animation: fadeInOut 3s ease-in-out;
+  }
+
+  @keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    10%, 90% { opacity: 1; }
+  }
+}
+
+@media (max-width: 480px) {
+  .scoreboard-table {
+    min-width: 700px;
+  }
+}

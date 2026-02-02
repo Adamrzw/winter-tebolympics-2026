@@ -1,11 +1,15 @@
+import { useState } from 'react';
 import { useSocket } from './hooks/useSocket';
 import { Header } from './components/Header';
 import { UpdateInfo } from './components/UpdateInfo';
+import { ViewToggle } from './components/ViewToggle';
 import { Scoreboard } from './components/Scoreboard';
+import { TableView } from './components/TableView';
 import './App.css';
 
 export function App() {
   const { scoreboardData, connected, error } = useSocket();
+  const [view, setView] = useState<'cards' | 'table'>('cards');
 
   if (error) {
     return (
@@ -39,7 +43,12 @@ export function App() {
     <div className="app">
       <Header />
       <UpdateInfo lastUpdate={scoreboardData.lastUpdate} nextUpdate={scoreboardData.nextUpdate} />
-      <Scoreboard teams={scoreboardData.teams} />
+      <ViewToggle view={view} onToggle={setView} />
+      {view === 'cards' ? (
+        <Scoreboard teams={scoreboardData.teams} />
+      ) : (
+        <TableView teams={scoreboardData.teams} />
+      )}
     </div>
   );
 }

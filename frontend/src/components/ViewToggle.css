@@ -1,0 +1,55 @@
+.view-toggle {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background-color: var(--color-card);
+  border-bottom: 1px solid var(--color-border);
+  justify-content: center;
+}
+
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: transparent;
+  border: 2px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text-secondary);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.toggle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-color: var(--color-gold);
+  color: var(--color-text);
+}
+
+.toggle-btn.active {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-background);
+}
+
+.toggle-btn svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .view-toggle {
+    padding: 0.75rem 1rem;
+  }
+
+  .toggle-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .toggle-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+}

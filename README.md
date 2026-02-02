@@ -68,6 +68,8 @@ Open http://localhost:3001 (backend serves frontend)
 - **Real-time Updates**: WebSocket connection provides instant score updates
 - **Automatic Refresh**: Medal data refreshes every 5 minutes
 - **Smooth Animations**: Framer Motion powers seamless rank transitions
+- **Dual View Modes**: Switch between card view and sortable table view
+- **Sortable Table**: Click any column header to sort (manager, points, medals, countries)
 - **Responsive Design**: Works on desktop and mobile devices
 - **Tiebreaker Logic**: Comprehensive ranking system with multiple tiebreaker rules
 - **Connection Status**: Visual indicators for server connection state
