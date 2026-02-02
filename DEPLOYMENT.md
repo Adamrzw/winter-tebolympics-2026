@@ -50,9 +50,9 @@ git push -u origin main
    - **Name**: `winter-tebolympics`
    - **Region**: Choose closest to you
    - **Branch**: `main`
-   - **Root Directory**: `backend`
+   - **Root Directory**: (leave empty - use repository root)
    - **Runtime**: `Node`
-   - **Build Command**: `npm install --include=dev && npm run build:full`
+   - **Build Command**: `npm run build`
    - **Start Command**: `npm start`
    - **Plan**: `Free`
 
@@ -143,9 +143,12 @@ git push -u origin main
 
 ### Build Process
 
-1. **Backend Build**: TypeScript → JavaScript (`backend/dist/`)
-2. **Frontend Build**: React → Static files (`frontend/dist/`)
-3. **Runtime**: Backend serves frontend files + API + WebSocket
+All dependencies and build scripts are in the root `package.json`:
+
+1. **Install**: Single `npm install` installs all dependencies
+2. **Backend Build**: TypeScript → JavaScript (`backend/dist/`)
+3. **Frontend Build**: React → Static files (`frontend/dist/`)
+4. **Runtime**: Backend serves frontend files + API + WebSocket
 
 ### Request Flow
 

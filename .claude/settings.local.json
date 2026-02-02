@@ -14,7 +14,8 @@
       "Bash(cmd.exe //c taskkill //F //PID 27604)",
       "Bash(npm run build:full:*)",
       "Bash(NODE_ENV=production npm start)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(npm run build:backend:*)"
     ]
   }
 }

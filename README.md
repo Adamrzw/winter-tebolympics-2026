@@ -29,33 +29,39 @@ winter-tebolympics-2026/
 
 ### Installation
 
-1. Install backend dependencies:
+Install all dependencies from the root:
 ```bash
-cd backend
 npm install
 ```
 
-2. Install frontend dependencies:
-```bash
-cd frontend
-npm install
-```
+All backend and frontend dependencies are managed in the root `package.json`.
 
 ### Running the Application
 
-1. Start the backend server (in `backend/` directory):
-```bash
-npm run dev
-```
-The server will start on http://localhost:3001
+You can now run everything from the **root directory**:
 
-2. In a new terminal, start the frontend (in `frontend/` directory):
-```bash
-npm run dev
-```
-The frontend will start on http://localhost:5173
+**Development Mode (two terminals):**
 
-3. Open your browser to http://localhost:5173
+Terminal 1 - Backend:
+```bash
+npm run dev:backend
+```
+Server starts on http://localhost:3001
+
+Terminal 2 - Frontend:
+```bash
+npm run dev:frontend
+```
+Frontend starts on http://localhost:5173
+
+Then open http://localhost:5173 in your browser.
+
+**Production Mode (single server):**
+```bash
+npm run build
+NODE_ENV=production npm start
+```
+Open http://localhost:3001 (backend serves frontend)
 
 ## Features
 
@@ -167,11 +173,13 @@ The backend serves the frontend static files, giving you:
 - Render account (free)
 - 10 minutes
 
-**Deploy Command:**
-```
-Build: npm install --include=dev && npm run build:full
+**Deploy Commands:**
+```bash
+Build: npm run build
 Start: npm start
 ```
+
+The root `package.json` orchestrates building both backend and frontend with all necessary dependencies.
 
 The application runs on Render's free tier with automatic deployments from GitHub.
 

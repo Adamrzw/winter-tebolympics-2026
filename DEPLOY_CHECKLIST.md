@@ -12,8 +12,8 @@ Quick reference for deploying to Render as a unified service.
 ## Service Deployment
 
 - [ ] Create Web Service on Render
-- [ ] Set Root Directory: `backend`
-- [ ] Set Build Command: `npm install --include=dev && npm run build:full`
+- [ ] Set Root Directory: (leave empty - use repository root)
+- [ ] Set Build Command: `npm run build`
 - [ ] Set Start Command: `npm start`
 - [ ] Add Environment Variables:
   - [ ] `NODE_ENV=production`

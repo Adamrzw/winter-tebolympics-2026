@@ -3,18 +3,22 @@ import { createServer } from 'http';
 import { Server as SocketServer } from 'socket.io';
 import cors from 'cors';
 import path from 'path';
-import { config } from './config/config';
-import { Team, MedalTableEntry, ScoreboardData } from './types';
-import { generateMockMedalData } from './services/medal-service';
-import { loadMedalData, saveMedalData } from './services/storage-service';
-import { calculateScores, rankTeams } from './services/scoring-service';
+import { fileURLToPath } from 'url';
+import { config } from './config/config.js';
+import { Team, MedalTableEntry, ScoreboardData } from './types/index.js';
+import { generateMockMedalData } from './services/medal-service.js';
+import { loadMedalData, saveMedalData } from './services/storage-service.js';
+import { calculateScores, rankTeams } from './services/scoring-service.js';
 import {
   initializeSocketHandler,
   broadcastScoreUpdate,
   getCurrentScoreboardData,
   setCurrentScoreboardData
-} from './socket/socket-handler';
-import teamsData from './data/teams.json';
+} from './socket/socket-handler.js';
+import teamsData from './data/teams.json' assert { type: 'json' };
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 const httpServer = createServer(app);
