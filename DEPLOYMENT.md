@@ -52,7 +52,7 @@ git push -u origin main
    - **Branch**: `main`
    - **Root Directory**: `backend`
    - **Runtime**: `Node`
-   - **Build Command**: `npm install && npm run build:full`
+   - **Build Command**: `npm install --include=dev && npm run build:full`
    - **Start Command**: `npm start`
    - **Plan**: `Free`
 

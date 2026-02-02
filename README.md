@@ -169,7 +169,7 @@ The backend serves the frontend static files, giving you:
 
 **Deploy Command:**
 ```
-Build: npm install && npm run build:full
+Build: npm install --include=dev && npm run build:full
 Start: npm start
 ```
 

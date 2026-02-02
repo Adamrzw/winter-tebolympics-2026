@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
 import { createServer } from 'http';
 import { Server as SocketServer } from 'socket.io';
 import cors from 'cors';
@@ -69,11 +69,11 @@ async function updateScoreboard(): Promise<ScoreboardData> {
   return scoreboardData;
 }
 
-app.get('/api/health', (req, res) => {
+app.get('/api/health', (req: Request, res: Response) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
-app.get('/api/scoreboard', async (req, res) => {
+app.get('/api/scoreboard', async (req: Request, res: Response) => {
   try {
     const data = getCurrentScoreboardData();
     if (data) {
@@ -89,7 +89,7 @@ app.get('/api/scoreboard', async (req, res) => {
   }
 });
 
-app.post('/api/refresh', async (req, res) => {
+app.post('/api/refresh', async (req: Request, res: Response) => {
   try {
     const data = await updateScoreboard();
     setCurrentScoreboardData(data);
@@ -107,7 +107,7 @@ if (config.nodeEnv === 'production') {
   app.use(express.static(frontendPath));
 
   // Handle client-side routing - send index.html for all non-API routes
-  app.get('*', (req, res) => {
+  app.get('*', (req: Request, res: Response) => {
     res.sendFile(path.join(frontendPath, 'index.html'));
   });
 }
