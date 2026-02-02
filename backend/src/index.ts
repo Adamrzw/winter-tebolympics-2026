@@ -15,7 +15,7 @@ import {
   getCurrentScoreboardData,
   setCurrentScoreboardData
 } from './socket/socket-handler.js';
-import teamsData from './data/teams.json' assert { type: 'json' };
+import teamsData from './data/teams.json' with { type: 'json' };
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
