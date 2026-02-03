@@ -5,9 +5,11 @@ import './UpdateInfo.css';
 interface UpdateInfoProps {
   lastUpdate: string;
   nextUpdate: string;
+  view: 'cards' | 'table';
+  onToggle: (view: 'cards' | 'table') => void;
 }
 
-export function UpdateInfo({ lastUpdate, nextUpdate }: UpdateInfoProps) {
+export function UpdateInfo({ lastUpdate, nextUpdate, view, onToggle }: UpdateInfoProps) {
   const [countdown, setCountdown] = useState<number>(0);
 
   useEffect(() => {
@@ -26,13 +28,42 @@ export function UpdateInfo({ lastUpdate, nextUpdate }: UpdateInfoProps) {
 
   return (
     <div className="update-info">
-      <div className="update-item">
-        <span className="update-label">Last Update:</span>
-        <span className="update-value">{formatTimestamp(lastUpdate)}</span>
+      <div className="update-details">
+        <div className="update-item">
+          <span className="update-label">Updated:</span>
+          <span className="update-value">{formatTimestamp(lastUpdate)}</span>
+        </div>
+        <div className="update-item">
+          <span className="update-label">Next:</span>
+          <span className="update-value countdown">{formatCountdown(countdown)}</span>
+        </div>
       </div>
-      <div className="update-item">
-        <span className="update-label">Next Update In:</span>
-        <span className="update-value countdown">{formatCountdown(countdown)}</span>
+      <div className="view-toggle">
+        <button
+          className={`toggle-btn ${view === 'cards' ? 'active' : ''}`}
+          onClick={() => onToggle('cards')}
+          aria-label="Card view"
+          title="Card view"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <rect x="3" y="3" width="7" height="7" />
+            <rect x="14" y="3" width="7" height="7" />
+            <rect x="3" y="14" width="7" height="7" />
+            <rect x="14" y="14" width="7" height="7" />
+          </svg>
+        </button>
+        <button
+          className={`toggle-btn ${view === 'table' ? 'active' : ''}`}
+          onClick={() => onToggle('table')}
+          aria-label="Table view"
+          title="Table view"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
       </div>
     </div>
   );

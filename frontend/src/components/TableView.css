@@ -84,12 +84,10 @@
 .scoreboard-table td {
   padding: 1rem;
   color: var(--color-text);
+  vertical-align: middle;
 }
 
 .rank-cell {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
   font-weight: 700;
 }
 
@@ -100,6 +98,7 @@
 
 .rank-emoji {
   font-size: 1.3rem;
+  margin-left: 0.5rem;
 }
 
 .manager-cell {
