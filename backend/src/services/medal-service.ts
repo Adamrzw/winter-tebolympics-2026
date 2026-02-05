@@ -1,4 +1,6 @@
-import { MedalTableEntry } from '../types';
+import { MedalTableEntry } from '../types/index.js';
+import { fetchYahooMedalData } from './yahoo-api-service.js';
+import { config } from '../config/config.js';
 
 const COUNTRIES = [
   { code: 'KOR', name: 'South Korea' },
@@ -29,4 +31,18 @@ export function generateMockMedalData(): MedalTableEntry[] {
       bronze: randomMedalCount()
     }
   }));
+}
+
+/**
+ * Fetches medal data - either from Yahoo API or generates mock data
+ * based on the useMockData configuration
+ */
+export async function getMedalData(): Promise<MedalTableEntry[]> {
+  if (config.useMockData) {
+    console.log('Using mock medal data');
+    return generateMockMedalData();
+  } else {
+    console.log('Fetching real medal data from Yahoo API');
+    return await fetchYahooMedalData();
+  }
 }

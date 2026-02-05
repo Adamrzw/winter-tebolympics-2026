@@ -6,7 +6,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { config } from './config/config.js';
 import { Team, MedalTableEntry, ScoreboardData } from './types/index.js';
-import { generateMockMedalData } from './services/medal-service.js';
+import { getMedalData } from './services/medal-service.js';
 import { loadMedalData, saveMedalData } from './services/storage-service.js';
 import { calculateScores, rankTeams } from './services/scoring-service.js';
 import {
@@ -43,20 +43,11 @@ app.use(express.json());
 const teams: Team[] = teamsData as Team[];
 
 async function updateScoreboard(): Promise<ScoreboardData> {
-  let medalData: MedalTableEntry[];
+  // Fetch medal data (either from Yahoo API or mock data based on config)
+  const medalData = await getMedalData();
 
-  if (config.useMockData) {
-    medalData = generateMockMedalData();
-    await saveMedalData(medalData);
-  } else {
-    const loaded = await loadMedalData();
-    if (loaded) {
-      medalData = loaded;
-    } else {
-      medalData = generateMockMedalData();
-      await saveMedalData(medalData);
-    }
-  }
+  // Save the medal data for reference
+  await saveMedalData(medalData);
 
   const scores = calculateScores(teams, medalData);
   const rankedScores = rankTeams(scores);

@@ -96,9 +96,16 @@ Critical: Each team only earns points from their designated medal type per count
 
 ## Data Flow
 
-1. **Initialization**: Server starts → loads teams from `teams.json` → generates/loads medal data → calculates scores → ranks teams
-2. **Updates**: Every 5 minutes → generate new mock data → save to `medal-data.json` → recalculate scores → broadcast via Socket.io
+1. **Initialization**: Server starts → loads teams from `teams.json` → fetches medal data (Yahoo API or mock) → calculates scores → ranks teams
+2. **Updates**: Every 5 minutes → fetch updated medal data → save to `medal-data.json` → recalculate scores → broadcast via Socket.io
 3. **Client Connection**: New client connects → immediately receives current scoreboard → subscribes to `scoreUpdate` events
+
+### Medal Data Sources
+
+The application supports two medal data sources (configured via `USE_MOCK_DATA` environment variable):
+
+- **Yahoo Sports API** (`USE_MOCK_DATA=false`): Fetches real-time medal data from Yahoo Sports GraphQL API. The `yahoo-api-service.ts` includes a mapping function to convert Yahoo's data structure to our internal `MedalTableEntry` format.
+- **Mock Data** (`USE_MOCK_DATA=true`): Generates random medal counts for testing/development. Useful for development when API is unavailable or for testing scoring logic.
 
 ## Critical Implementation Details
 
@@ -142,9 +149,14 @@ Backend only (no frontend .env needed):
 ```
 NODE_ENV=production          # Enables static file serving
 PORT=3001                    # Server port
-USE_MOCK_DATA=true          # Generate random medal data
+USE_MOCK_DATA=true          # true = random mock data, false = Yahoo Sports API
 CORS_ORIGIN=*               # Allowed origins (irrelevant in production)
 ```
+
+**Data Source Configuration:**
+- Set `USE_MOCK_DATA=false` to use real-time data from Yahoo Sports API
+- Set `USE_MOCK_DATA=true` (default) to use randomly generated mock data for testing
+- The Yahoo API URL and parameters are configured in `backend/src/services/yahoo-api-service.ts`
 
 ### Team Data Structure
 
