@@ -13,7 +13,7 @@ const YAHOO_API_PARAMS = {
 // Yahoo API response types
 interface YahooCountryDetails {
   name: string;
-  isoCode: string;
+  isoCode: string | null;
   iocCode: string;
   flagImage?: Array<{ url: string }>;
 }
@@ -46,10 +46,11 @@ interface YahooApiResponse {
 
 /**
  * Maps Yahoo API olympic team data to our MedalTableEntry format
+ * Falls back to iocCode if isoCode is null
  */
 function mapYahooTeamToMedalEntry(yahooTeam: YahooOlympicTeam): MedalTableEntry {
   return {
-    code: yahooTeam.countryDetails.isoCode,
+    code: yahooTeam.countryDetails.isoCode || yahooTeam.countryDetails.iocCode,
     name: yahooTeam.countryDetails.name,
     medals: {
       gold: yahooTeam.gold,
